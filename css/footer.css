@@ -1,0 +1,28 @@
+.copyright-section::before{
+    content: '';
+    height: 2px;
+    background:white;
+    width: 50%;
+    display: block;  
+    margin:0 auto; 
+}
+
+.icon-contact a
+{
+    border-radius: 50%;
+    font-size:15px;
+}
+.container-fluid
+{
+    padding-top:100px  !important;
+    padding-bottom: 40px !important;
+}
+.list-unstyled li a 
+{
+    font-size: 15px;
+}
+h5
+{
+    font-weight: bold;
+    font-family: Comic Sans MS cursive;
+}

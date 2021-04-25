@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+.card-text{
+  height:150px;
+}
+
+
+
+.menu{
+    font-size: 40px;
+    color: orange;
+    font-weight: bold;
+}
+.menu::after
+{
+    content: '';
+    height: 4px;
+    background: #191919;
+    width: 10%;
+    display: block;   
+}
+
+.modal-title::after
+{
+    content:'';
+    height: 4px;
+    background: orange;
+    width:100px;
+    display: block;   
+}
+.modal-body
+{
+    font-weight: bold;
+    color: orange;
+}
+.card
+{
+    height:100%;
+}
+.card-title
+{
+    font-weight: bold;
+}
+.card-text
+{
+    margin-top:20px;
+    font-weight: bold;
+    font-size:20px;
+    color:orange;
+}
+
+.card-body a{
+    font-size: 20px;
+    position:absolute !important;
+bottom:80px !important;
+}
+.card-body .btn-warning{
+    color:white !important;
+}
+.card-body a:last-child{
+    left:140px;
+}
+
+.card
+{
+    height:100%;
+}
