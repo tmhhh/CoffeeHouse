@@ -24,4 +24,15 @@ module.exports={
             Drink
         })
     },
+    search:async function(req,res){
+        console.log(req.body.info);
+
+        const Drink= await productModel.search(req.body.info);
+        console.log("------");
+
+        console.log(Drink);
+        res.render('homepage',{
+            Drink
+        });
+    },
 }

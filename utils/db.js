@@ -26,9 +26,17 @@ module.exports = {
         });
       });
   },
-  getAllExcept:function(sql,table,condition){
+  getAllExcept:function(sql,condition){
     return new Promise(function (resolve, reject) {
         db.query(sql,condition, function (err, result) {
+          if (err) return reject(err);
+          resolve(result);
+        });
+      });
+  },
+  search:function(sql){
+    return new Promise(function (resolve, reject) {
+        db.query(sql, function (err, result) {
           if (err) return reject(err);
           resolve(result);
         });
