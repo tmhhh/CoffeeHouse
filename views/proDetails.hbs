@@ -1,0 +1,69 @@
+<link rel="stylesheet" href="css/product.css">
+<body>
+
+
+    <section class="mb-4 mt-4 container  ">
+
+        <div class="row">
+            <div class="col-12 col-md-6 mb-4 mb-md-0">
+
+                <div id="mdb-lightbox-ui"></div>
+
+                <div class="mdb-lightbox">
+
+                    <div class="row product-gallery mx-1">
+
+                        <div class="col-12 mb-0">
+                            <figure class="view overlay rounded z-depth-1 main-img">
+                                <a href="" data-size="710x823">
+                                    <img src="{{Product.proImage}}" class="img-fluid z-depth-1 img-responsive"
+                                        style="width:100%">
+                                </a>
+                            </figure>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-12 col-md-6 ">
+                <div class="product-info">
+                    <h5>{{Product.proName}}</h5>
+                    <p><span class="mr-1"><strong>{{Product.proPrice}}.000VND</strong></span></p>
+                    <p class="pt-1 p-responsive">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam,
+                        sapiente illo. Sit
+                        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
+                        officia quis dolore quos sapiente tempore alias.</p>
+
+                    <hr>
+
+                    <a href="/cart" type="button" class="btn-buynow btn btn-warning  btn-md mr-1 mb-2">Buy Now</a>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <div class="product-related ">
+        <h4> OTHER DRINKS</h4>
+        <div class="row mt-5 mb-5 ">
+            {{#each this.otherDrink}}
+            <div class="col-6 col-md-4">
+                <div class="card">
+                    <img src="{{proImage}}"
+                        class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{proName}}</h5>
+                        <p class="card-text">{{proPrice}}.000VND</p>
+                        <a href="/cart" class="btn btn-warning">Buy Now</a>
+                        <a href="/product?id={{proID}}" class="btn btn-outline-warning d-none d-md-block">More</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+           
+        </div>
+    </div>
+
+</body>

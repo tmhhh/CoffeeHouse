@@ -1,0 +1,10 @@
+{
+    "mysql": {
+        "host": "125.234.104.133",
+        "port": "3306",
+        "user": "webgr07",
+        "password": "gZ7vkTc6UGQ3bMFJ",
+        "database": "webgr07"
+    }
+  }
+  

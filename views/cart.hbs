@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="./css/style.css">
+
+<body>
+    <section class="cart__content mt-4">
+        <div class="row">
+            <div class="col-3 d-none d-md-block">
+                <div class="cart__right">
+                    <ul class="cart-list">
+                        <li class="cart-list-item"><a class="cart-link" href="#">Popular</a></li>
+                        <li class="cart-list-item"><a class="cart-link" href="#">Coffee</a></li>
+                        <li class="cart-list-item"><a class="cart-link" href="#">Fruit tea </a></li>
+                        <li class="cart-list-item"><a class="cart-link" href="#">Milk tea
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="cart__center">
+                    {{#each this.Drink}}
+                    <div class="card-item border px-3">
+                        <div class="row">
+                            <div class="col-5 col-md-2">
+                                <img class="w-100 card-img pt-3"
+                                    src="{{proImage}}"
+                                    alt="aaaa">
+                            </div>
+                            <div class="col-7 col-md-10">
+                                <div class="card-custom pt-3">
+                                    <h3 class="card-title">{{proName}}</h3>
+                                    <p class="card-desc">
+                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore quibusdam
+                                        reprehenderit
+                                        hic aperiam nostrum aut! Delectus iusto illo error quam.
+                                    </p>
+                                    <span class="card-price">{{proPrice}}.000VND</span>
+                                    <div class="card-btn text-right mb-3">
+                                        <button class="btn btn-outline-warning"><i class="fa fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <!-- Cart part -->
+            <div class="col-12 col-md-3 my-3 my-md-0">
+                <div class="cart__left">
+                    <h3 class="carttitle-h3 text-center border-bottom pb-1">Cart</h3>
+                    <div class="inCart__main pr-4">
+                        <div class="cart-view border-bottom">
+                            <div class="row p-2">
+                                <div class="col-1 mr-2">
+                                    <span class="inCart-quantity"></span>
+                                </div>
+                                <div class="col-7">
+                                    <span class="inCart-title">
+
+                                    </span>
+                                </div>
+                                <div class="col-3">
+                                    <span class="inCart-price"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <hr>
+                    <div class="inCart__bottom px-2">
+                        <p class="inCart-total">Total Price</p>
+                        <p class="inCart-tprice"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+<script src="js/handle.js"></script>
+<script src="js/homepage.js"></script>
+<script src="js/product.js"></script>
