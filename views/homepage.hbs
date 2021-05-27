@@ -21,11 +21,11 @@
     <div class="card-container row mt-5 mb-5 ">
         {{#each this.Drink}}
         <div class="col-4">
-            <img src="{{proImage}}"
-                class="card-img-top" alt="...">
+            <a href="/product?id={{proID}}"> <img src="{{proImage}}"
+                class="card-img-top" alt="..."></a>
             <div class="card-body">
-                <h5 class="card-title">{{proName}}</h5>
-                <p class="card-text">{{proPrice}}.000 VND</p>
+                <h5  class="card-title">{{proName}} </h5></a>
+                <p  class="card-text">{{proPrice}}.000 VND</p>
                 <a href="/cart" class="btn btn-warning">Buy Now</a>
                 <a href="/product?id={{proID}}" class="btn btn-outline-warning ml-2">More</a>
             </div>
