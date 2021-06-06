@@ -109,3 +109,22 @@ body {
     height:3px;
     color:orange;
 }
+.order_button
+{
+    margin:0 auto;
+    text-align: center;
+    display:block ;
+    width:30%;
+    color:white !important;
+    font-size:20px ;
+    font-weight: bold;
+    background-color: #ea8025 !important ;
+    box-sizing: border-box;
+}
+.order_icon
+{
+    position:absolute;
+    bottom:12px;
+    left:20px;
+
+}

@@ -20,9 +20,7 @@
                     <div class="card-item border px-3">
                         <div class="row">
                             <div class="col-5 col-md-2">
-                                <img class="w-100 card-img pt-3"
-                                    src="{{proImage}}"
-                                    alt="aaaa">
+                                <img class="w-100 card-img pt-3" src="{{proImage}}" alt="aaaa">
                             </div>
                             <div class="col-7 col-md-10">
                                 <div class="card-custom pt-3">
@@ -32,7 +30,11 @@
                                     </p>
                                     <span class="card-price">{{proPrice}}.000VND</span>
                                     <div class="card-btn text-right mb-3">
-                                        <button class="btn btn-outline-warning"><i class="fa fa-plus"></i></button>
+                                        <a  class="btn btn-outline-warning" href="/cart/remove?id={{proID}}"> <i style="color:orange"
+                                                class="fas fa-minus"></i></a>
+
+                                        <a href="/cart/add?id={{proID}}" class="btn btn-outline-warning"><i
+                                                class="fa fa-plus"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -45,39 +47,93 @@
             <div class="col-12 col-md-3 my-3 my-md-0">
                 <div class="cart__left">
                     <h3 class="carttitle-h3 text-center border-bottom pb-1">Cart</h3>
+                    {{#each Cart}}
                     <div class="inCart__main pr-4">
                         <div class="cart-view border-bottom">
                             <div class="row p-2">
                                 <div class="col-1 mr-2">
-                                    <span class="inCart-quantity"></span>
+                                    <span class="inCart-quantity">{{Quantity}}</span>
                                 </div>
                                 <div class="col-7">
                                     <span class="inCart-title">
-
+                                        {{proName}}
                                     </span>
                                 </div>
                                 <div class="col-3">
-                                    <span class="inCart-price"></span>
+                                    <span class="inCart-price">{{proPrice}}.000VND</span>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
 
+                    </div>
+                    {{/each}}
 
                     <hr>
                     <div class="inCart__bottom px-2">
                         <p class="inCart-total">Total Price</p>
+                        {{#if Cart}}
+                        <p class="inCart-tprice">{{TotalPrice}}.000VND</p>
+
+                        {{else}}
                         <p class="inCart-tprice"></p>
+
+                        {{/if}}
                     </div>
+                    {{#if Cart}}
+                    <a href="#" class="order_button " data-toggle="modal" data-target="#exampleModal">Order</a>
+                    {{/if}}
 
                 </div>
 
             </div>
+            <form action="/cart/order" method="POST" class="modal fade" id="exampleModal" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Order Information</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="row">
+                                    <div class="col-12 mb-4">
+                                        <i class="order_icon fas fa-map-marker-alt "></i>
+                                        <input name="userAddress" type="text" class="form-control pl-4"
+                                            placeholder="Address">
+                                    </div>
+                                    <div class="col mb-4">
+                                        <i class=" order_icon fas fa-user"></i>
+                                        <input name="userName" type="text" class="form-control pl-4"
+                                            placeholder="User name">
+                                    </div>
+                                    <div class="col mb-4">
+                                        <i class="order_icon fas fa-phone"></i>
+                                        <input name="userPhone" type="text" class="form-control pl-4"
+                                            placeholder="Phone number">
+                                    </div>
+                                    <div class="col-12 mb-4">
+                                        <i class="order_icon far fa-sticky-note"></i>
+                                        <input name="note" type="text" class="form-control pl-4" placeholder="Note">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" style="color:white ;background-color: orange;"
+                                class="btn ">Order</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
 
         </div>
 
     </section>
-<script src="js/handle.js"></script>
-<script src="js/homepage.js"></script>
-<script src="js/product.js"></script>
+    {{!--
+    <script src="js/handle.js"></script>
+    <script src="js/homepage.js"></script>
+    <script src="js/product.js"></script> --}}

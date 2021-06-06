@@ -18,6 +18,7 @@ module.exports={
     search:function(info){
         const condition=info;
         const query=`SELECT * FROM ${table} WHERE proID LIKE "%`+info +`%" OR proName LIKE "%`+info +`%" `;
+        console.log(query);
         return db.search(query);
     }
 }

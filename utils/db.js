@@ -8,6 +8,16 @@ db.connect((err) => {
 });
 
 module.exports = {
+  insert:function(table,entity){
+    return new Promise(function (resolve, reject) {
+      const sql = `INSERT INTO ${table} SET ?`;
+      db.query(sql,entity,function (err, result) {
+        if (err) return reject(err);
+        resolve(result);
+      });
+    });
+ 
+  },
   getAll: function (table) {
     return new Promise(function (resolve, reject) {
       const sql = `SELECT * FROM ${table}`;
@@ -42,4 +52,12 @@ module.exports = {
         });
       });
   },
+  getLatestID:function(sql){
+    return new Promise(function (resolve, reject) {
+      db.query(sql, function (err, result) {
+        if (err) return reject(err);
+        resolve(result);
+      });
+    });
+  }
 }
