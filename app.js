@@ -26,13 +26,13 @@ app.use(
         extended: true,
     })
 );
-app.use(function (req, res, next) {
-    if (req.session.Cart) {
-        res.locals.Cart = req.session.Cart;
-        res.locals.TotalPrice = req.session.totalPrice;
-    }
-    next();
-})
+// app.use(function (req, res, next) {
+//     if (req.session.Cart) {
+//         res.locals.Cart = req.session.Cart;
+//         res.locals.TotalPrice = req.session.totalPrice;
+//     }
+//     next();
+// })
 app.use("/", require('./routes/main.route'));
 
 app.use(function (req, res) {

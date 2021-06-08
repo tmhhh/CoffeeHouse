@@ -30,8 +30,8 @@
                                     </p>
                                     <span class="card-price">{{proPrice}}.000VND</span>
                                     <div class="card-btn text-right mb-3">
-                                        <a  class="btn btn-outline-warning" href="/cart/remove?id={{proID}}"> <i style="color:orange"
-                                                class="fas fa-minus"></i></a>
+                                        <a class="btn btn-outline-warning" href="/cart/remove?id={{proID}}"> <i
+                                                style="color:orange" class="fas fa-minus"></i></a>
 
                                         <a href="/cart/add?id={{proID}}" class="btn btn-outline-warning"><i
                                                 class="fa fa-plus"></i></a>
@@ -71,15 +71,15 @@
                     <hr>
                     <div class="inCart__bottom px-2">
                         <p class="inCart-total">Total Price</p>
-                        {{#if Cart}}
-                        <p class="inCart-tprice">{{TotalPrice}}.000VND</p>
+                        {{#if this.totalPrice}}
+                        <p class="inCart-tprice">{{totalPrice}}.000VND</p>
 
                         {{else}}
                         <p class="inCart-tprice"></p>
 
                         {{/if}}
                     </div>
-                    {{#if Cart}}
+                    {{#if this.totalPrice}}
                     <a href="#" class="order_button " data-toggle="modal" data-target="#exampleModal">Order</a>
                     {{/if}}
 

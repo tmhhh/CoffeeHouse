@@ -19,13 +19,13 @@ module.exports={
     getListCart:async function(req,res){
         const Drink= await productModel.getAll();
         res.render('cart',{
-            Drink
+            Drink,
+            Cart:req.session.Cart,
+            totalPrice:req.session.totalPrice
         })
     },
     search:async function(req,res){
-
         const Drink= await productModel.search(req.body.info);
-
         res.render('homepage',{
             Drink
         });
